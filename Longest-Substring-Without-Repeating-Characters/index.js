@@ -41,15 +41,19 @@ var lengthOfLongestSubstring = function (s) {
 };
 
 var lengthOfLongestSubstring = function (s) {
+  if (s.length === 0) return 0;
+  if (s.length === 1) return 1;
+
   const map = {};
-  let longest = 0;
+  let longest = 1;
 
   for (let j = 0, i = 0; j < s.length; j++) {
     if (typeof map[s.charAt(j)] === "number") {
-      i = Math.max(map[s.charAt(j)], i);
+      i = Math.max(map[s.charAt(j)] + 1, i);
     }
-    longest = Math.max(longest, j - i + 1);
-    map[s.charAt(j)] = j + 1; //下标 + 1 代表 i 要移动的下个位置
+
+    longest = Math.max(longest,  j - i + 1);
+    map[s.charAt(j)] = j; //下标 + 1 代表 i 要移动的下个位置
   }
 
   return longest;

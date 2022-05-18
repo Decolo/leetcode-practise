@@ -11,8 +11,8 @@ var addTwoNumbers = function (l1, l2) {
   let currentNode = null;
   while (l1 !== null && l2 !== null) {
     const sum = l1.val + l2.val + carry;
-    const currentValue = sum % 10;
-    carry = Math.floor(sum / 10);
+    const currentValue = sum >= 10 ? sum - 10 : sum;
+    carry = sum > 10 ? 1 : 0;
 
     if (!headingNode) {
       headingNode = new ListNode(currentValue, null);
@@ -28,8 +28,8 @@ var addTwoNumbers = function (l1, l2) {
 
   while (l1 !== null) {
     const sum = l1.val + carry;
-    const currentValue = sum % 10;
-    carry = Math.floor(sum / 10);
+    const currentValue = sum >= 10 ? sum - 10 : sum;
+    carry = sum > 10 ? 1 : 0;
 
     if (!headingNode) {
       headingNode = new ListNode(currentValue, null);
@@ -44,8 +44,8 @@ var addTwoNumbers = function (l1, l2) {
 
   while (l2 !== null) {
     const sum = l2.val + carry;
-    const currentValue = sum % 10;
-    carry = Math.floor(sum / 10);
+    const currentValue = sum >= 10 ? sum - 10 : sum;
+    carry = sum > 10 ? 1 : 0;
 
     if (!headingNode) {
       headingNode = new ListNode(currentValue, null);
@@ -96,8 +96,8 @@ function getListNode(
 // expect
 // 3465 + 42 = 3507;
 
-// const l1 = getListNode([9, 9, 9, 9, 9, 9, 9]);
-// const l2 = getListNode([9, 9, 9, 9]);
+const l1 = getListNode([9, 9, 9, 9, 9, 9, 9]);
+const l2 = getListNode([9, 9, 9, 9]);
 // expect
 // 9999 + 9999999 =
 
@@ -106,8 +106,8 @@ function getListNode(
 // expect
 // 0
 
-const l1 = getListNode([9]);
-const l2 = getListNode([9]);
+// const l1 = getListNode([9]);
+// const l2 = getListNode([9]);
 // expect
 // 18
 console.log(addTwoNumbers(l1, l2));
