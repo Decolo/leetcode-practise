@@ -59,22 +59,22 @@ var lengthOfLongestSubstring = function (s) {
   return longest;
 };
 
-// 'abcabcbb'
-// expect: 3
-console.log(lengthOfLongestSubstring("abcabcbb"));
+// // 'abcabcbb'
+// // expect: 3
+// console.log(lengthOfLongestSubstring("abcabcbb"));
 
-// // 'aab'
-// expect: 2
-console.log(lengthOfLongestSubstring("aab"));
+// // // 'aab'
+// // expect: 2
+// console.log(lengthOfLongestSubstring("aab"));
 
-// "pwwkew"
-// expoect: 3
-console.log(lengthOfLongestSubstring("pwwkew"));
-// slicing window
+// // "pwwkew"
+// // expoect: 3
+// console.log(lengthOfLongestSubstring("pwwkew"));
+// // slicing window
 
-// "dvdf"
-// expect: 3
-console.log(lengthOfLongestSubstring("dvdf"));
+// // "dvdf"
+// // expect: 3
+// console.log(lengthOfLongestSubstring("dvdf"));
 
 // "abba"
 // expect: 2

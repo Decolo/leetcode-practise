@@ -25,11 +25,12 @@ var findMedianSortedArrays = function(nums1, nums2) {
       total.push(nums2[index]);
     }
   }
-
+  console.log('------ test total -----', total);
   return total.length % 2 === 0 ? (total[total.length / 2] + total[total.length / 2 - 1]) / 2: total[Math.floor(total.length / 2)]
 };
 
-const nums1 = [-2, -1];
 
-const nums2 = [3];
+const nums1 = [3];
+
+const nums2 = [-1, -2];
 console.log(findMedianSortedArrays(nums1, nums2));
