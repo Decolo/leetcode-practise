@@ -38,7 +38,6 @@ var maximumProduct = function (nums) {
 
   return Math.max(pre2 * sortedNums[len - 1], last3)
 
-
 };
 
 console.log(maximumProduct([-8,-7,-2,10,20]))
