@@ -26,9 +26,21 @@ const mergeTwoLists = (l1, l2) => {
   return head.next;
 };
 
-const newList = mergeTwoLists(
-  new ListNode(1, new ListNode(4, new ListNode(5, null))),
-  new ListNode(1, new ListNode(3, null))
-)
+var mergeKLists = function (lists) {
+  if (lists.length === 0) return null;
 
-debugger
+  if (lists.length === 1) return lists[0];
+
+  if (lists.length === 2) {
+    return mergeTwoLists(lists[0], lists[1]);
+  }
+
+  const midIndex = Math.floor(lists.length / 2);
+
+  return mergeTwoLists(
+    mergeKLists(lists.slice(0, midIndex + 1)),
+    mergeKLists(lists.slice(midIndex + 1))
+  );
+};
+
+debugger;
